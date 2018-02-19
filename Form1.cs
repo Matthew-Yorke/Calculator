@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace Calculator
 {
@@ -15,8 +16,12 @@ namespace Calculator
       public Form1()
       {
          // Initialize member variables.
-         mInputValue = 0.0F;
+         mInputValueOne = 0.0F;
+         mInputValueTwo = 0.0F;
          mOutputValue = 0.0F;
+         mCurrentInputStep = InputStep.VALUE_ONE;
+         mCurrentOperation = Operation.NONE;
+         mClearTextBox = false;
 
          // Call to initialize the components (buttons and text box) of the window
          InitializeComponent();
@@ -85,51 +90,149 @@ namespace Calculator
 
       private void AdditionButtonClick(object theSender, EventArgs theEvent)
       {
+         mCurrentOperation = Operation.ADDITION;
+         mClearTextBox = true;
 
+         CheckStep();
       }
 
       private void SubtractionButtonClick(object theSender, EventArgs theEvent)
       {
+         mCurrentOperation = Operation.SUBTRACTION;
+         mClearTextBox = true;
 
+         CheckStep();
       }
 
       private void MultiplicationButtonClick(object theSender, EventArgs theEvent)
       {
+         mCurrentOperation = Operation.MULTIPLICATION;
+         mClearTextBox = true;
 
+         CheckStep();
       }
 
       private void DivisionButtonClick(object theSender, EventArgs theEvent)
       {
+         mCurrentOperation = Operation.DIVISION;
+         mClearTextBox = true;
 
+         CheckStep();
       }
 
       private void ClearEntryButtonClick(object theSender, EventArgs theEvent)
       {
-
+         this.textBox.Text = "0";
       }
 
       private void ClearButtonClick(object theSender, EventArgs theEvent)
       {
+         mCurrentInputStep = InputStep.VALUE_ONE;
+         mCurrentOperation = Operation.NONE;
+         mInputValueOne = 0.0F;
+         mInputValueTwo = 0.0F;
+         mOutputValue = 0.0F;
          this.textBox.Text = "0";
       }
 
       private void EqualsButtonClick(object theSender, EventArgs theEvent)
       {
-         this.textBox.Text = mOutputValue.ToString();
+         CheckStep();
+
+         mCurrentOperation = Operation.NONE;
       }
 
       private void AppendValue(string theValue)
       {
-         if(this.textBox.Text == "0" && theValue != ".")
+         if((this.textBox.Text == "0" && theValue != ".") ||
+            (mClearTextBox == true))
          {
             this.textBox.Text = "";
+            mClearTextBox = false;
          }
 
          this.textBox.Text += theValue;
       }
 
-      private float mInputValue;
+      private void CheckStep()
+      {
+         switch(mCurrentInputStep)
+         {
+            case InputStep.VALUE_ONE:
+            {
+               mInputValueOne = float.Parse(this.textBox.Text, CultureInfo.InvariantCulture.NumberFormat);
+
+               mCurrentInputStep = InputStep.VALUE_TWO;
+
+               break;
+            }
+            case InputStep.VALUE_TWO:
+            {
+               mInputValueTwo = float.Parse(this.textBox.Text, CultureInfo.InvariantCulture.NumberFormat);
+
+               Compute();
+
+               mInputValueOne = mOutputValue;
+
+               break;
+            }
+            default:
+            {
+               break;
+            }
+         }
+      }
+
+      private void Compute()
+      {
+         switch(mCurrentOperation)
+         {
+            case Operation.ADDITION:
+            {
+               mOutputValue = mInputValueOne + mInputValueTwo;
+               break;
+            }
+            case Operation.SUBTRACTION:
+            {
+               mOutputValue = mInputValueOne - mInputValueTwo;
+               break;
+            }
+            case Operation.MULTIPLICATION:
+            {
+               mOutputValue = mInputValueOne * mInputValueTwo;
+               break;
+            }
+            case Operation.DIVISION:
+            {
+               mOutputValue = mInputValueOne / mInputValueTwo;
+               break;
+            }
+            case Operation.NONE:
+            default:
+            {
+               break;
+            }
+         }
+
+         this.textBox.Text = mOutputValue.ToString();
+
+         mCurrentOperation = Operation.NONE;
+      }
+
+      private float mInputValueOne;
+
+      private float mInputValueTwo;
 
       private float mOutputValue;
+
+      enum InputStep {VALUE_ONE, VALUE_TWO};
+
+      private InputStep mCurrentInputStep;
+
+      enum Operation {ADDITION, SUBTRACTION, MULTIPLICATION, DIVISION, NONE};
+
+      private Operation mCurrentOperation;
+
+      bool mClearTextBox;
    }
 }
