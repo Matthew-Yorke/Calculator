@@ -1,4 +1,17 @@
-﻿using System;
+﻿//***************************************************************************************************************************************************
+//
+// File Name: Program.cs
+//
+// Description:
+//  Automatically generated code that kicks of the program and indicated the calculator window to be created.
+//
+// Change History:
+//  Author               Date           Description
+//  Matthew D. Yorke     02/20/2018     TODO: Add Description.
+//
+//***************************************************************************************************************************************************
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;

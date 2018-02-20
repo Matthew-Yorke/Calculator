@@ -1,4 +1,17 @@
-﻿namespace Calculator
+﻿//***************************************************************************************************************************************************
+//
+// File Name: CalculatorWindows.Designer.cs
+//
+// Description:
+//  This class contains automatically generated code from the CalculatorWindow.cs[Design].
+//
+// Change History:
+//  Author               Date           Description
+//  Matthew D. Yorke     02/20/2018     Initial release.
+//
+//***************************************************************************************************************************************************
+
+namespace Calculator
 {
    partial class CalculatorWindow
    {
@@ -38,7 +51,7 @@
          this.ValueEightButton = new System.Windows.Forms.Button();
          this.ValueNineButton = new System.Windows.Forms.Button();
          this.ValueZeroButton = new System.Windows.Forms.Button();
-         this.textBox = new System.Windows.Forms.TextBox();
+         this.TextBox = new System.Windows.Forms.TextBox();
          this.AdditionButton = new System.Windows.Forms.Button();
          this.SubtractionButton = new System.Windows.Forms.Button();
          this.MultiplicationButton = new System.Windows.Forms.Button();
@@ -159,15 +172,15 @@
          this.ValueZeroButton.UseVisualStyleBackColor = true;
          this.ValueZeroButton.Click += new System.EventHandler(this.ValueZeroButtonClick);
          // 
-         // textBox
+         // TextBox
          // 
-         this.textBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.textBox.Location = new System.Drawing.Point(12, 12);
-         this.textBox.Multiline = true;
-         this.textBox.Name = "textBox";
-         this.textBox.Size = new System.Drawing.Size(348, 60);
-         this.textBox.TabIndex = 10;
-         this.textBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+         this.TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.TextBox.Location = new System.Drawing.Point(12, 12);
+         this.TextBox.Multiline = true;
+         this.TextBox.Name = "TextBox";
+         this.TextBox.Size = new System.Drawing.Size(348, 60);
+         this.TextBox.TabIndex = 10;
+         this.TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
          // 
          // AdditionButton
          // 
@@ -257,7 +270,7 @@
          this.ClearButton.UseVisualStyleBackColor = true;
          this.ClearButton.Click += new System.EventHandler(this.ClearButtonClick);
          // 
-         // Form1
+         // CalculatorWindow
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -270,7 +283,7 @@
          this.Controls.Add(this.MultiplicationButton);
          this.Controls.Add(this.SubtractionButton);
          this.Controls.Add(this.AdditionButton);
-         this.Controls.Add(this.textBox);
+         this.Controls.Add(this.TextBox);
          this.Controls.Add(this.ValueZeroButton);
          this.Controls.Add(this.ValueNineButton);
          this.Controls.Add(this.ValueEightButton);
@@ -281,7 +294,7 @@
          this.Controls.Add(this.ValueThreeButton);
          this.Controls.Add(this.ValueTwoButton);
          this.Controls.Add(this.ValueOneButton);
-         this.Name = "Form1";
+         this.Name = "CalculatorWindow";
          this.Text = "Form1";
          this.ResumeLayout(false);
          this.PerformLayout();
@@ -300,7 +313,7 @@
       private System.Windows.Forms.Button ValueEightButton;
       private System.Windows.Forms.Button ValueNineButton;
       private System.Windows.Forms.Button ValueZeroButton;
-      private System.Windows.Forms.TextBox textBox;
+      private System.Windows.Forms.TextBox TextBox;
       private System.Windows.Forms.Button AdditionButton;
       private System.Windows.Forms.Button SubtractionButton;
       private System.Windows.Forms.Button MultiplicationButton;
