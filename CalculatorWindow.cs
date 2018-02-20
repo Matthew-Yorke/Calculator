@@ -3,7 +3,7 @@
 // File Name: CalculatorWindows.cs
 //
 // Description:
-//  This class containes the functionality of the calculator window. Callbacks are provided for each individual button.
+//  This class contains the functionality of the calculator window. Callbacks are provided for each individual button.
 //
 // Change History:
 //  Author               Date           Description
@@ -265,8 +265,8 @@ namespace Calculator
       // Method Name: DecimalButtonClick
       //
       // Description:
-      //  Callback for the decimal button that appends the decimalto the end of the string in the calculators text box. If there is already a decimal
-      //  in the string another decimal will NOT be placed.
+      //  Callback for the decimal button that appends the decimal to the end of the string in the calculators text box. If there is already a
+      //  decimal in the string another decimal will NOT be placed.
       //
       // Arguments:
       //  theSender - Contains a reference to the control/object that raised the event. In this case it will be the decimal button on the calculator
@@ -532,7 +532,7 @@ namespace Calculator
       // Method Name: ProcessOpertionButtonPressed
       //
       // Description:
-      //  Called when an operation button is pressed, this helper method proccesses the calculation between the two user input values. The operation
+      //  Called when an operation button is pressed, this helper method processes the calculation between the two user input values. The operation
       //  tracker i updated with the operation type the was pressed. There is a prevention for allowing an operation pressed multiple times in a row.
       //
       // Arguments:
@@ -556,7 +556,7 @@ namespace Calculator
             // Check which step is next (first value being entered or second value being entered).
             CheckStep();
 
-            // Update the equals and operation button trackers to indicate an operation button was the alst type of button pressed.
+            // Update the equals and operation button trackers to indicate an operation button was the last type of button pressed.
             mEqualsButtonPressed = false;
             mOperationButtonPressed = true;
          }
@@ -568,7 +568,7 @@ namespace Calculator
       //
       // Description:
       //  Check to see if this is the first value being put in or the second. Note that after the first value is entered the clear button must be
-      //  pressed to alow the operator to input a first number again. Also note that if computation occurs then the first value is updated to be
+      //  pressed to allow the operator to input a first number again. Also note that if computation occurs then the first value is updated to be
       //  the same as the output of the computation.
       //
       // Arguments:
@@ -580,7 +580,7 @@ namespace Calculator
       //*********************************************************************************************************************************************
       private void CheckStep()
       {
-         // Determine which inpput ste the operator is on.
+         // Determine which input the operator is on.
          switch(mCurrentInputStep)
          {
             // The first value has been entered so store this value and set that the next value will be for step two.
@@ -592,7 +592,7 @@ namespace Calculator
 
                break;
             }
-            // The second value has been enetered so store this value and compute the result between value one and two.
+            // The second value has been entered so store this value and compute the result between value one and two.
             case InputStep.VALUE_TWO:
             {
                mInputValueTwo = float.Parse(this.TextBox.Text, CultureInfo.InvariantCulture.NumberFormat);
@@ -655,7 +655,7 @@ namespace Calculator
                mOutputValue = mInputValueOne / mInputValueTwo;
                break;
             }
-            // If the opreation was not selected or an error has occured, do nothing.
+            // If the operation was not selected or an error has occurred, do nothing.
             case Operation.NONE:
             default:
             {
@@ -689,7 +689,7 @@ namespace Calculator
       // The possible operations that can be pressed.
       enum Operation {ADDITION, SUBTRACTION, MULTIPLICATION, DIVISION, NONE};
 
-      // Tracks which operation butten was pressed last.
+      // Tracks which operation button was pressed last.
       private Operation mCurrentOperation;
 
       // Tracks to see if the text box should be cleared on the next numerical/decimal input.
