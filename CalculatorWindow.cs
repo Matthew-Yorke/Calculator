@@ -11,9 +11,9 @@ using System.Globalization;
 
 namespace Calculator
 {
-   public partial class Form1 : Form
+   public partial class CalculatorWindow : Form
    {
-      public Form1()
+      public CalculatorWindow()
       {
          // Initialize member variables.
          mInputValueOne = 0.0F;
