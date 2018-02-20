@@ -1,0 +1,9 @@
+C:\Users\Yorke\source\repos\Calculator\Calculator\bin\x86\Release\Calculator.exe.config
+C:\Users\Yorke\source\repos\Calculator\Calculator\bin\x86\Release\Calculator.exe
+C:\Users\Yorke\source\repos\Calculator\Calculator\bin\x86\Release\Calculator.pdb
+C:\Users\Yorke\source\repos\Calculator\Calculator\obj\x86\Release\Calculator.CalculatorWindow.resources
+C:\Users\Yorke\source\repos\Calculator\Calculator\obj\x86\Release\Calculator.Properties.Resources.resources
+C:\Users\Yorke\source\repos\Calculator\Calculator\obj\x86\Release\Calculator.csproj.GenerateResource.Cache
+C:\Users\Yorke\source\repos\Calculator\Calculator\obj\x86\Release\Calculator.csproj.CoreCompileInputs.cache
+C:\Users\Yorke\source\repos\Calculator\Calculator\obj\x86\Release\Calculator.exe
+C:\Users\Yorke\source\repos\Calculator\Calculator\obj\x86\Release\Calculator.pdb

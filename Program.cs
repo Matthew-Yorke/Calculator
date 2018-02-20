@@ -7,7 +7,7 @@
 //
 // Change History:
 //  Author               Date           Description
-//  Matthew D. Yorke     02/20/2018     TODO: Add Description.
+//  Matthew D. Yorke     02/20/2018     Initial release.
 //
 //***************************************************************************************************************************************************
 
