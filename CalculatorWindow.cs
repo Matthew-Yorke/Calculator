@@ -280,15 +280,21 @@ namespace Calculator
       private void DecimalButtonClick(object theSender, EventArgs theEvent)
       {
          // Check if either the text box does NOT currently contain a decimal OR if the equals button was pressed last.
-         if((this.TextBox.Text.Contains(".") == false) ||
-            (mEqualsButtonPressed == true))
+         if(this.TextBox.Text.Contains(".") == false)
+         {
+            this.TextBox.Text += ".";
+         }
+         if((mEqualsButtonPressed == true) ||
+            (mOperationButtonPressed == true))
          {
             this.TextBox.Text = "0.";
          }
 
          // Update the equals and operation trackers to indicate neither button was last pressed.
+         // Also update the clear text box tracker as the text box no longer should be cleared anymore due to a decimal being placed.
          mEqualsButtonPressed = false;
          mOperationButtonPressed = false;
+         mClearTextBox = false;
       }
 
       //*********************************************************************************************************************************************
@@ -513,7 +519,7 @@ namespace Calculator
          }
 
          // If the string is currently only "0" and theValue being processed is not a decimal then clear the text box to allow a new string to start.
-         if((this.TextBox.Text == "0" && theValue != ".") ||
+         if((this.TextBox.Text == "0") ||
             (mClearTextBox == true))
          {
             this.TextBox.Text = "";

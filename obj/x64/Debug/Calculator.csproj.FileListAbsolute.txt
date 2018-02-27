@@ -7,3 +7,4 @@ C:\Users\Yorke\source\repos\Calculator\Calculator\obj\x64\Debug\Calculator.cspro
 C:\Users\Yorke\source\repos\Calculator\Calculator\obj\x64\Debug\Calculator.csproj.CoreCompileInputs.cache
 C:\Users\Yorke\source\repos\Calculator\Calculator\obj\x64\Debug\Calculator.exe
 C:\Users\Yorke\source\repos\Calculator\Calculator\obj\x64\Debug\Calculator.pdb
+C:\Users\Yorke\source\repos\Calculator\Calculator\obj\x64\Debug\Calculator.csprojResolveAssemblyReference.cache
