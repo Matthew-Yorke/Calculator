@@ -178,6 +178,7 @@ namespace Calculator
          this.TextBox.Location = new System.Drawing.Point(12, 12);
          this.TextBox.Multiline = true;
          this.TextBox.Name = "TextBox";
+         this.TextBox.ReadOnly = true;
          this.TextBox.Size = new System.Drawing.Size(348, 60);
          this.TextBox.TabIndex = 10;
          this.TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
